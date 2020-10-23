@@ -1,66 +1,99 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <link href="./style.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet" />
-  </head>
-  <body>
-    <header>
-      <img id="logo" src="./img/sample-logo.png" width="200px" />
-      <nav>
-        <ul>
-          <a href="#"><li>Home</li></a>
-          <a href="#"><li>About</li></a>
-          <a href="#"><li>Contact</li></a>
-        </ul>
-      </nav>
-    </header>
-    <section>
-      <h1>Featured Posts</h1>
-      <div id="article-list">
-        <article>
-          <a href=""><h3>Lorem Post 1</h3></a>
-          <p>
-            Lorem Ipsum Dolor Sit Amet, mea te verear signiferumque, per illum labores ne. Blandit omnesque scripserit
-            pri ex, et pri dicant eirmod deserunt. Aeque perpetua ea nec. Sit erant patrioque delicatissimi ut. Et sea
-            quem sint, nam in minim voluptatibus. Etiam placerat eam in.
-          </p>
-        </article>
-        <article>
-          <a href=""><h3>Lorem Post 2</h3></a>
-          <p>
-            Lorem Ipsum Dolor Sit Amet, mea te verear signiferumque, per illum labores ne. Blandit omnesque scripserit
-            pri ex, et pri dicant eirmod deserunt. Aeque perpetua ea nec. Sit erant patrioque delicatissimi ut. Et sea
-            quem sint, nam in minim voluptatibus. Etiam placerat eam in.
-          </p>
-        </article>
-        <article>
-          <a href=""><h3>Lorem Post 3</h3></a>
-          <p>
-            Lorem Ipsum Dolor Sit Amet, mea te verear signiferumque, per illum labores ne. Blandit omnesque scripserit
-            pri ex, et pri dicant eirmod deserunt. Aeque perpetua ea nec. Sit erant patrioque delicatissimi ut. Et sea
-            quem sint, nam in minim voluptatibus. Etiam placerat eam in.
-          </p>
-        </article>
-        <article>
-          <a href=""><h3>Lorem Post 4</h3></a>
-          <p>
-            Lorem Ipsum Dolor Sit Amet, mea te verear signiferumque, per illum labores ne. Blandit omnesque scripserit
-            pri ex, et pri dicant eirmod deserunt. Aeque perpetua ea nec. Sit erant patrioque delicatissimi ut. Et sea
-            quem sint, nam in minim voluptatibus. Etiam placerat eam in.
-          </p>
-        </article>
-        <article>
-          <a href=""><h3>Lorem Post 5</h3></a>
-          <p>
-            Lorem Ipsum Dolor Sit Amet, mea te verear signiferumque, per illum labores ne. Blandit omnesque scripserit
-            pri ex, et pri dicant eirmod deserunt. Aeque perpetua ea nec. Sit erant patrioque delicatissimi ut. Et sea
-            quem sint, nam in minim voluptatibus. Etiam placerat eam in.
-          </p>
-        </article>
-      </div>
-    </section>
-    <footer>
-      <h5>copyright &copy; 2016 by HACKFOX</h5>
-    </footer>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="./style.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="page-container">
+    <div class="content-wrap">
+      <header>
+        <div class="topBar-container">
+          <div class="topBar-title-container">
+            <h1 class="topBar-title">Let's Do It!</h1>
+        </div>
+        </div>
+      </header>
+      <main>
+        <div class="below-topBar"></div>
+        <div class="addTask-container">
+          <form>
+            <label for="task-add">Do</label>
+            <input type="text" name="task-add" id="task-add" placeholder="Task">
+            <div class=category-add-container>
+              <label for="category-add">Category</label>
+              <select class="category-add" name="category-add" id="category-add">
+                <option value="Job">Job</option>
+                <option value="Family">Family</option>
+                <option value="Social">Social</option>
+                <option value="Personal"selected>Personal</option>
+              </select>
+              <!-- <input list="categories-add" name="category-add" id="category-add" placeholder="Category" required>
+              <datalist id="categories-add">
+                <option value="Job">
+                <option value="Family">
+                <option value="Social">
+                <option value="Personal">
+              </datalist> -->
+            </div>
+            <div class="add-dateTime-container">
+              <div class="dueDate-add">
+                <label for="dueDate-add">Due date</label>
+                <input type="date" name="dueDate-add" id="dueDate-add" placeholder="Pick a due date" required>  
+              </div>
+              <div class="endTime-add">
+                <label for="endTime-add">End time</label>
+                <input type="time" name="endTime-add" id="endTime-add" placeholder="Pick a time" required>
+              </div>
+            </div>
+            <button type="button" class="addBtn" onclick="newUpcomingTask()">Add</button>
+          </form>
+        </div>
+        <div class="navBar">
+          <div class="nav-container">
+            <a class="finished-a">Finished</a>
+            <a class="upcoming-a" >Upcoming</a>
+            <a class="expired-a">Expired</a>
+          </div>
+        </div>
+        <div class="list-container">
+          <div class="upcoming-container">
+            <!-- <div class = "upcoming-header">
+              <h2>Search your upcoming tasks</h2>
+              <label class="basedOn-label" for="search-option">Based on</label>
+              <select class="basedOn-select"name="search-option">
+                <option value="task">Task</option>
+                <option value="category">Category</option>
+                <option value="dueDate" selected>Due date</option>
+                <option value="endTime">End time</option>
+                <option value="nameOfDay">Name of day</option>
+              </select>
+              <input name="search" class="search" placeholder="Search" id="search">
+            </div> -->
+            <div id="upcomingList">
+          <!--    <div id="20201016150345" class="list">
+                <p class="category-card">Job</p>
+                <p class="task-card">Cook dinner<p>
+                <p class="due-card">Due on 31 December 2020 at 13.00</p>
+                <button type="button" class="finished">Finished</button>
+                <button type="button" class="delete">Delete</button>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  <footer>
+    <h5>copyright &copy; 2020 by hactiv8rud</h5>
+  </footer>
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>Please complete all fields!</p>
+    </div>
+  </div>
+</div>
+<script src="./letsdoit.js"></script>
+</body>
 </html>
